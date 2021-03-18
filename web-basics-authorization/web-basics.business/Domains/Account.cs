@@ -28,12 +28,15 @@ namespace web_basics.business.Domains
         }
         public void Create(ViewModels.Account acc)
         {
-            var res = mapper.Map<ViewModels.Account, data.Entities.Account>(acc);
-            this.repository.Create(res);
+            this.repository.Create(mapper.Map<ViewModels.Account, data.Entities.Account>(acc));
         }
         public void Delete(int id)
         {
             this.repository.Delete(id);
+        }
+        public void Edit(ViewModels.Account account)
+        {
+            this.repository.Edit(mapper.Map<ViewModels.Account, data.Entities.Account>(account));
         }
     }
 }

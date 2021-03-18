@@ -46,9 +46,12 @@ namespace web_basics.Controllers
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        [Authorize(Roles = "Admin")]
+        public IActionResult Update(business.ViewModels.Account account)
         {
+            this.domain.Edit(account);
+            return Ok();
         }
 
         // DELETE api/<UserController>/5

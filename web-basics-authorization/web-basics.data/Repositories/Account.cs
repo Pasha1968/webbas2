@@ -32,7 +32,12 @@ namespace web_basics.data.Repositories
         }
         public void Delete(int id)
         {
-            context.Accounts.Remove(context.Accounts.FirstOrDefault(m => m.Id == id));
+            context.Accounts.Remove(context.Accounts.FirstOrDefault(inp => inp.Id == id));
+            context.SaveChanges();
+        }
+        public void Edit(Entities.Account account)
+        {
+            context.Accounts.Update(account);
             context.SaveChanges();
         }
     }

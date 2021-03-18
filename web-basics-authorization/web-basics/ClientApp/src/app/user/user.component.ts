@@ -13,6 +13,7 @@ export class UserComponent implements OnInit {
   userEmail: string;
   userRole: number;
   userPassword: string;
+  newRole: number;
   user: User = {
     id: 0,
     email: '',
@@ -42,6 +43,14 @@ export class UserComponent implements OnInit {
         this.users = data;
       });
     });
+  }
+  changeRole(user: User) {
+    user.role = +this.newRole;
+    this.userService.update(user).subscribe(() => {
+      this.userService.get().subscribe(data => {
+        this.users = data;
+      });
+    })
   }
 
 }

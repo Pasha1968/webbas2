@@ -26,8 +26,13 @@
           <ng-template ngSwitchDefault>User</ng-template>
         </div>
       </td>
-      <td><button (click)="deleteUser(user.id)" >delete</button></td>
-      <td><button>Edit</button></td>
+      <td><button (click)="deleteUser(user.id)">delete</button></td>
+      <td><button (click)="changeRole(user)">Edit</button></td>
+    </tr>
+    <tr>
+      <td>
+        <input [(ngModel)]="newRole" placeholder="Change role" />
+      </td>
     </tr>
   </tbody>
 </table>
