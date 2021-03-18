@@ -19,7 +19,8 @@ namespace web_basics.data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            //optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=CATS;Trusted_Connection=True;");
         }
 
         public DbSet<Cat> Cats { get; set; }

@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+//Добавить страницу которая доступна только администратору с возможностью менять роль
+//пользователя, удалять существующих и добавлять новых пользователей.
+
 namespace web_basics.data.Repositories
 {
     public class Account
@@ -20,6 +24,11 @@ namespace web_basics.data.Repositories
         {
             var accounts = context.Accounts.ToList();
             return accounts;
+        }
+        public void Create(Entities.Account account)
+        {
+            context.Accounts.Add(account);
+            context.SaveChanges();
         }
     }
 }

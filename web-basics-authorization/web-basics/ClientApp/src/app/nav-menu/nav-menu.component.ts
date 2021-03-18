@@ -20,6 +20,12 @@ export class NavMenuComponent {
   public get isLoggedId(): boolean {
     return this.as.isAuthenticated();
   }
+  public get isAdmin(): boolean {
+    return this.as.isAdmin();
+  }
+  public get isModer(): boolean {
+    return this.as.isModer();
+  }
 
   constructor(
     private as: AuthService

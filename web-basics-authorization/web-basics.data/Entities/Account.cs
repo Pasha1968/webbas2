@@ -15,6 +15,7 @@ namespace web_basics.data.Entities
     public enum Role
     {
         User,
-        Admin
+        Admin,
+        Moder
     }
 }
