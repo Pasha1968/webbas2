@@ -55,6 +55,7 @@ namespace web_basics.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            this.domain.Delete(id);
         }
     }
 }

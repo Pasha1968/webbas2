@@ -31,5 +31,9 @@ namespace web_basics.business.Domains
             var res = mapper.Map<ViewModels.Account, data.Entities.Account>(acc);
             this.repository.Create(res);
         }
+        public void Delete(int id)
+        {
+            this.repository.Delete(id);
+        }
     }
 }

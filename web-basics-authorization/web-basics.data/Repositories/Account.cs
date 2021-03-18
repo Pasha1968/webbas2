@@ -30,5 +30,10 @@ namespace web_basics.data.Repositories
             context.Accounts.Add(account);
             context.SaveChanges();
         }
+        public void Delete(int id)
+        {
+            context.Accounts.Remove(context.Accounts.FirstOrDefault(m => m.Id == id));
+            context.SaveChanges();
+        }
     }
 }

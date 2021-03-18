@@ -26,8 +26,8 @@
           <ng-template ngSwitchDefault>User</ng-template>
         </div>
       </td>
-      <td><button>delete</button></td>
-      <td><button>change role</button></td>
+      <td><button (click)="deleteUser(user.id)" >delete</button></td>
+      <td><button>Edit</button></td>
     </tr>
   </tbody>
 </table>
